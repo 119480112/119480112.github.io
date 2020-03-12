@@ -1,0 +1,122 @@
+
+/*font-family: 'Playball', cursive;
+font-family: 'Fauna One', serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Girassol', cursive;*/
+/*Removing the line under the words*/
+* {
+text-decoration: none;
+
+}
+/*Changing the sites background*/
+body {
+ background-color: #2e97ff;
+
+}
+/*Changing header colour and measurement*/
+header {
+ background-color: #d4d4d4;
+ height: 100px;
+ width: 100%;
+}
+/*Editing the logo*/
+header .header-logo {
+  font-size: 30px;
+  color: #111;
+  font-family: 'Playball', cursive;
+  font-weight: 1000;
+  padding: 20px 10px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/*centering links*/
+header nav ul {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+/*Removing gaps between links and putting links vertical*/
+header nav ul li {
+  display: inline-block;
+  float: left;
+  padding: 0px 50px;
+  list-style: none;
+}
+/*Changing size and weight of linka*/
+header nav ul li a {
+  font-size: 16px;
+  color: #111;
+  font-family: 'Julius Sans One', sans-serif;
+}
+/*Editing the banner*/
+.home-banner   {
+  height: 590px;
+  width: 100%;
+  background-image: url('images/banner4.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*Editing the text in the banner*/
+.home-banner h2 {
+  font-family: 'Fauna One', serif;
+  font-size: 60px;
+  font-weight: 850;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  text-shadow: 2px 2px #111;
+}
+/*Editing the text in the banner*/
+.home-banner h1 {
+  font-family:  'Girassol', cursive;
+  font-size: 28px;
+  font-weight: 80;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  text-shadow: 2px 2px #111;
+}
+
+
+/* Finish later*/
+/* The sidebar menu */
+.sidenavigation {
+  height: auto;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 108px;
+  left: 9px;
+  background-color: #e37500;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenavigation a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffa850;
+  display: block;
+}
+
+/* When you mouse over the navigation links, it changes the colour */
+.sidenavigation a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.block-one {
+  margin-left: 160px;
+  padding: 0px 10px;
+  font-family: 'Fauna One', serif;
+}
+/* Editing ebus page */
+#content {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Playball', cursive;
+}

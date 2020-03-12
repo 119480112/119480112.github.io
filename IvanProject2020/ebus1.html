@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link rel="stylesheet" href="stylesheet.css">
+      <link href="https://fonts.googleapis.com/css?family=Fauna+One|Girassol|Julius+Sans+One|Playball&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">Home</a>
+      <nav>
+        <ul>
+          <li><a href="curriculumvitae.html">Curriculum Vitae</a></li>
+          <li><a href="interests.html">My Interests</a></li>
+          <li><a href="consultingservice.html">Consulting Service</a></li>
+          <li><a href="ebus1.html">Ebusiness</a></li>
+        </ul>
+      </nav>
+
+     <div id="content"> <!-- content div code -->
+
+       <h3>Choose a Consulting Service</h3>
+         <input type="radio" id="hyper" name="service" value="200"> <!-- coding radiobutton 1 -->
+         <label>Hyperautomation @ €200</label><br> <!-- Hyperautomation label-->
+
+         <input type="radio" id="multi" name="service" value="500"> <!-- coding radiobutton 2 -->
+         <label>Multiexperience @ €500</label><br> <!-- Multiexperience label -->
+
+         <input type="radio" id="distributed" name="service" value="1000"> <!-- coding radiobutton 3 -->
+         <label>Distributed Cloud @ €1000</label> <!-- Distributed cloud label -->
+
+       <!-- paragraphs for the totals -->
+       <p id="SubTotal"></p>
+       <p id="Total"></p>
+       <p id="VAT"></p>
+       <p id="Discount"></p>
+
+       <br />
+       <!-- coding the buttons -->
+       <button class="button" onclick="calcSub(this.value)">Calculate Cost</button>
+       <button class="button" onclick="uncheck()">Clear Selection</button>
+     </div>
+     <script>
+       //declaring variables
+       var argdiscountAmt, argvatAmt, argtotalPrice, argsubTotal;
+       //equaling argSelection to 0
+       var argSelection = 0;
+
+       //1st function: equalling argSelection to the value of the checked radiobutton
+       function calcSub() {
+       if (hyper.checked == true){
+       argSelection = hyper.value;
+       }
+       else if (multi.checked == true){
+       argSelection = multi.value;
+       }
+       else if (distributed.checked == true){
+       argSelection = distributed.value;
+       }
+       // passing argSelection
+       calcVatTotal(argSelection);
+       }
+
+       //fuction 2: calculations for arguments
+       //calling parmSelection
+       function calcVatTotal(parmSelection){
+       argsubTotal = parmSelection
+       argdiscountAmt = 0.05 * argsubTotal;
+       argvatAmt = 0.2 * (argsubTotal - argdiscountAmt);
+       argtotalPrice = argsubTotal -argdiscountAmt + argvatAmt;
+
+       //passing argsubTotal, argvatAmt, argtotalPrice, argdiscountAmt
+       calcDisp(argsubTotal, argdiscountAmt, argvatAmt, argtotalPrice);
+       }
+
+       //function 3: writing string and putting the passed amounts into the paragraphs that were already defined on button press
+       //calling  parmdiscountAmt, parmsubTotal, parmtotalPrice parmvatAmt,
+       function calcDisp(parmsubTotal, parmdiscountAmt, parmvatAmt, parmtotalPrice) {
+
+       document.getElementById("SubTotal").innerHTML = "Subtotal = " + "        " + "€" + parmsubTotal;
+       document.getElementById("Discount").innerHTML = "5% Discount = " + "                " + "-€" + parmdiscountAmt.toFixed(2);
+       document.getElementById("VAT").innerHTML = "Vat @ 20% = " + "                     " + "€" + parmvatAmt.toFixed(2);
+       document.getElementById("Total").innerHTML = "Total = "  + "                  " + "€"+ parmtotalPrice.toFixed(2);
+
+       //putting the strings into blocks
+       document.getElementById("SubTotal").style.display = "block";
+       document.getElementById("Discount").style.display = "block";
+       document.getElementById("VAT").style.display = "block";
+       document.getElementById("Total").style.display = "block";
+       }
+
+       //clearing checkboxes and hiding blocks, when you select the button
+       function uncheck() {
+       document.getElementById("hyper").checked = false;
+       document.getElementById("multi").checked = false;
+       document.getElementById("distributed").checked = false;
+       document.getElementById("SubTotal").style.display = "none";
+       document.getElementById("Discount").style.display = "none";
+       document.getElementById("VAT").style.display = "none";
+       document.getElementById("Total").style.display = "none";
+     }
+
+     </script>
+    </header>
+</body>
